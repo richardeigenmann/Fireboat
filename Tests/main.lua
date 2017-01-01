@@ -16,6 +16,7 @@ end
 
 function love.load(arg)
 	TestButton.load(arg)
+	TestSlider.load(arg)
 	showButtons()
 end
 
@@ -40,5 +41,11 @@ function love.mousereleased(x, y, button, istouch)
 		TestButton.mousereleased(x, y, button, istouch)
 	elseif testSlider then
 		TestSlider.mousereleased(x, y, button, istouch)
+	end
+end
+
+function love.mousepressed(x, y, button)
+	if testSlider then
+		TestSlider.mousepressed(x, y, button)
 	end
 end
